@@ -1,9 +1,10 @@
-import { useState } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { useRef, useState } from 'react';
+import { View, StyleSheet, Text, TextInput } from 'react-native';
 import MaskInput from 'react-native-mask-input';
 
 export default function App() {
   const [value, setValue] = useState('');
+  const inputRef = useRef<TextInput>(null);
   return (
     <View style={styles.container}>
       <Text>Non declare value</Text>
@@ -17,6 +18,13 @@ export default function App() {
         mask="[000]-[000]-[0000]"
         value={value}
         onChangeText={setValue}
+        style={styles.input}
+      />
+      <Text>ref</Text>
+      <MaskInput
+        ref={inputRef}
+        mask="[000]-[000]-[0000]"
+        defaultValue="095"
         style={styles.input}
       />
     </View>
