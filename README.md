@@ -11,13 +11,37 @@ npm install react-native-mask-input
 ## Usage
 
 
-```js
-import { multiply } from 'react-native-mask-input';
+```tsx
+import MaskInput from 'react-native-mask-input';
 
 // ...
 
-const result = await multiply(3, 7);
+return (
+    <View>
+        <MaskInput mask="[000]-[000]-[0000]"/>
+    </View>
+)
 ```
+
+## Props
+
+### `TextInputProps`
+
+Inherits [TextInput Props](https://reactnative.dev/docs/textinput)
+
+### `mask`
+
+The mask key should be inside [ ]. for example, `[AA0]-[0000000000]`
+
+When not set, the component act like `TextInput`
+| maskChar | value                |
+| -------- | -------------------- |
+| A        | a-z case insensitive |
+| 0        | number               |
+| W        | word                 |
+
+
+
 
 
 ## Contributing

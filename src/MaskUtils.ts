@@ -4,6 +4,8 @@ const maskToRegex = (char: string): MaskedRegEx => {
   switch (char) {
     case 'A':
       return new RegExp('[a-zA-Z]');
+    case 'W':
+      return new RegExp('\\w');
     case '0':
       return new RegExp('\\d');
     default:
