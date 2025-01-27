@@ -3,7 +3,7 @@ type MaskedRegEx = string | RegExp;
 const maskToRegex = (char: string): MaskedRegEx => {
   switch (char) {
     case 'A':
-      return new RegExp('\\w');
+      return new RegExp('[a-zA-Z]');
     case '0':
       return new RegExp('\\d');
     default:

@@ -8,11 +8,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>Non declare value</Text>
-      <MaskInput
-        mask="[000]-[000]-[0000]"
-        defaultValue="095"
-        style={styles.input}
-      />
+      <MaskInput mask="[AA0]-[0000000]-[00]" style={styles.input} />
       <Text>declareValue</Text>
       <MaskInput
         mask="[000]-[000]-[0000]"
