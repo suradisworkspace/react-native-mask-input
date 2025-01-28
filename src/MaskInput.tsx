@@ -33,12 +33,15 @@ const MaskInput = forwardRef<
     value: valueProps,
     defaultValue: defaultValueProps,
     mask: maskProps,
+    maxLength: maxLengthProps,
     ...otherProps
   } = props;
   const maskMap = MaskUtils.maskToRegExMap(maskProps);
   const [value, setValue] = useState(
     MaskUtils.maskValue(defaultValueProps || '', maskMap)
   );
+
+  const maxLength = maskProps ? maskMap.length : maxLengthProps;
   const selectedValue = valueProps ?? value;
 
   const onChangeText = (text: string) => {
@@ -53,6 +56,7 @@ const MaskInput = forwardRef<
       ref={ref}
       value={selectedValue}
       onChangeText={onChangeText}
+      maxLength={maxLength}
       {...otherProps}
     />
   );
