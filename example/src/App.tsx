@@ -1,10 +1,10 @@
 import { useRef, useState } from 'react';
-import { View, StyleSheet, Text, TextInput } from 'react-native';
-import MaskInput from 'react-native-mask-input';
+import { View, StyleSheet, Text } from 'react-native';
+import MaskInput, { type MaskInputRef } from 'react-native-mask-input';
 
 export default function App() {
   const [value, setValue] = useState('');
-  const inputRef = useRef<TextInput>(null);
+  const inputRef = useRef<MaskInputRef>(null);
   return (
     <View style={styles.container}>
       <Text>Non declare value</Text>
