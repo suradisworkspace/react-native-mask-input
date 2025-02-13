@@ -2,11 +2,10 @@ import { TextInput, type TextInputProps } from 'react-native';
 import MaskUtils from './MaskUtils';
 import { forwardRef, useState } from 'react';
 
-type ExtraInputProps = {
+export interface MaskInputPropsType extends TextInputProps {
   mask?: string;
   onChangeText?: (maskText: string, value?: string) => void;
-};
-export type MaskInputPropsType = TextInputProps & ExtraInputProps;
+}
 
 export type MaskInputRef = TextInput;
 
@@ -24,9 +23,9 @@ const InputMain = forwardRef<MaskInputRef, MaskInputPropsType>((props, ref) => {
 });
 
 const MaskInput = forwardRef<
-  TextInput,
+  MaskInputRef,
   MaskInputPropsType & {
-    mask: NonNullable<ExtraInputProps['mask']>;
+    mask: NonNullable<MaskInputPropsType['mask']>;
   }
 >((props, ref) => {
   const {
